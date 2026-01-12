@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="./game_2.css">
+    <script src="./game_2.js" defer></script>
+</head>
+
+<body>
+    <div class="greeting">
+        <p>Welcome to the Game.</p>
+    </div>
+    <div class="game-area">
+        <div class="row1">
+            <button class="response button" data-row="0" data-col="0"><img class="show"></button>
+            <button class="response button" data-row="0" data-col="1"><img class="show"></button>
+            <button class="response button" data-row="0" data-col="2"><img class="show"></button>
+        </div>
+        <div class="row2">
+            <button class="response button" data-row="1" data-col="0"><img class="show"></button>
+            <button class="response button" data-row="1" data-col="1"><img class="show"></button>
+            <button class="response button" data-row="1" data-col="2"><img class="show"></button>
+        </div>
+        <div class="row3">
+            <button class="response button" data-row="2" data-col="0"><img class="show"></button>
+            <button class="response button" data-row="2" data-col="1"><img class="show"></button>
+            <button class="response button" data-row="2" data-col="2"><img class="show"></button>
+        </div>
+    </div>
+    <span id="Bottom"><h3> Turn: <span id="curr-turn">Player 1 <span id="XorO">(X)</span></span></h3></span>
+</body>
+
+</html>
