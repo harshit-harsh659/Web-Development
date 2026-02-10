@@ -1,50 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Resume</title>
+    <link href="./styles.css" rel="stylesheet">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
-    <h1>This is start of my resume</h1>
-    <ul>
-        <li><h2>Summary</h2></li>
-        
 
-        
-        <li><h2>Education</h2></li> 
+    <h1 class="tophead">My Resume</h1>
 
 
-        <li><h2>Work Experience</h2></li>
-        <p>As of now, none.</p>
+    <div class="float">
+        <button id="btn1">
+            Work
+        </button>
+        <button id="btn2">
+            About
+        </button>
+        <button id="btn3">
+            Contact
+        </button>
+    </div>
+
+        <div class="intro">
+            <h1>I'm Harshit Harsh</h1>
+            <p class="sub">Full-Stack Web Developer.</p>
+        </div>
+
+<div class="card contents">
+        <div class="card base" id="work">
+            <div class="panel">
+                <p>I'm in my  first year hence I dont have any work experience as of now.Here are some of my projects that you might want to see:
+                    <a href="./projects.com">Projects</a>
+                    <a href="" id="grey">Github</a>
+                </p>
+            </div>
+
+        </div>
 
 
-        <li>Skills</li>
-        <ol>
-            <li>Front-End Web Development</li>
-            <!li>Back-End Web Development<!/li>
-        </ol>
+        <div class="card base" id="about">
+            <div class="panel">
+                <p>About me...</p>
+            </div>
+        </div>
 
 
-        <a href="./project.html"><li>Projects</li></a>
-        
+        <div class="card base" id="contact">
+            <div class="panel">
+                <p>Mobile/Whatsapp No.: +918797487615      Email: harshitharsh659@gmail.com</p>
+            </div>
+        </div>
+    </div>
 
-        <li>About Me</li>
-        <p>I'm Harshit Harsh from Bodhgaya, Bihar. I am pursuing my B.Tech degree from MMMUT(Madan Mohan Malviya University Of Technology) Gorakhpur, U.P..</p>
+    <footer class="footer">
 
-        <li>Hobbies</li>
-            <ol>
-                <li>Playing Games</li>
-                <li>Coding</li>
-                <li>Watching Anime</li>
-                <li>Reading Books</li>
-            </ol>
-        <li>Contact details</li>
-            <ol>
-                <li>Mobile/Whatsapp No.: +918797487615</li>
-                <li>Email: harshitharsh659@gmail.com</li>
-            </ol>
+        <div class="footer-content">
 
-    </ul>
+            <div class="footer-left">
+                <p>© 2025 Harshit Harsh</p>
+            </div>
+
+            <div class="footer-right">
+                <a href="tel:+918797487615" id="ligreen">Call</a>
+                <a href="" id="blue">LinkedIn</a>
+                <a href="https://wa.me/918797487615" id="green">WhatsApp</a>
+            </div>
+
+        </div>
+
+    </footer>
+
 </body>
+
 </html>
