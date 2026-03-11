@@ -7,13 +7,18 @@ body {
     flex-direction: column;
 }
 
+sub {
+    font-size: 18px;
+}
+
 h1.tophead {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
+    font-weight: 700;
 }
 
-#me{
+#me {
     font-weight: 400;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -33,6 +38,14 @@ h1#me~p{
     flex: 1;
 }
 
+._btn:active {
+    transform: scale(1.1);
+}
+
+._btn.active {
+    text-decoration: underline;
+}
+
 .float {
     display: flex;
     margin-left: 10%;
@@ -44,16 +57,32 @@ h1#me~p{
 }
 
 
-.intro-wrap{
+.intro-wrap {
     display: flex;
     justify-content: flex-start;
 }
-.intro{
-    margin-top: 8%;
-    margin-left: 9%;
+
+.intro {
+    margin-top: 10%;
+    padding-left: 20%;
 }
 
-.card.contents{
+.intro h1 {
+    margin-bottom: 1px;
+    font-weight: 400;
+}
+
+.intro p.sub {
+    margin-bottom: 10px;
+    margin-top: 1px;
+}
+
+.intro p.sentence {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.card.contents {
     flex: 1;
     display: flex;
     width: 100%;
