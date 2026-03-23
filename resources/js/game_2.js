@@ -75,9 +75,9 @@ function game(a, b, user, btn_click){
 function draw(button, user){
     const img=button.querySelector("img");
     if (user==1){
-        img.src="./game_2_1.png";
+        img.src="../resources/images/game_2_1.png";
     } else{
-        img.src="./game_2_2.png";
+        img.src="../resources/images/game_2_2.png";
     }
 }
 

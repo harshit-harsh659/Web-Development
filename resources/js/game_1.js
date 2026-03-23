@@ -64,13 +64,13 @@ async function game() {
     imag.style.opacity=0;
     await sleep(400);
     if (comp == 1) {
-        imag.src = "./game_1_1.png";
+        imag.src = "../resources/images/game_1_1.png";
         par.textContent = "The computer thought of Paper.";
     } else if (comp == 2) {
-        imag.src = "./game_1_2.png";
+        imag.src = "../resources/images/game_1_2.png";
         par.textContent = "The computer thought of Scissors.";
     } else {
-        imag.src = "./game_1_3.png";
+        imag.src = "../resources/images/game_1_3.png";
         par.textContent = "The computer thought of Stone.";
     }
     imag.offsetHeight;
