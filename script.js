@@ -4,27 +4,29 @@ function showCard(id) {
     });
     
     document.querySelectorAll(".card").forEach(card => {
-        card.classList.remove("display");
+        card.classList.remove("active");
     });
 
-    document.getElementById(id).classList.add("display");
-
-    document.querySelector(".card.contents").classList.add("show");
+    document.getElementById(id).classList.add("active");
     
-    const activeBtn = document.querySelector(`#${id === 'work' ? 'btn1' : id === 'about' ? 'btn2' : 'btn3'}`);
+    const activeBtn = document.querySelector(`#${id === 'projects' ? 'btn1' : id === 'games' ? 'btn2' : 'btn3'}`);
     activeBtn.classList.add('active');
 }
 
 document.getElementById("btn1").addEventListener("click", () => {
-    showCard("work");
+    showCard("projects");
 });
 
 document.getElementById("btn2").addEventListener("click", () => {
+    showCard("games");
+});
+
+document.getElementById("btn3").addEventListener("click", () => {
     showCard("about");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    showCard("about");
+    showCard("projects");
     startCarousel();
 });
 
