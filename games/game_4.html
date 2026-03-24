@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll - 3D Cube Game</title>
+    <link rel="stylesheet" href="./game_4.css">
+    <script src="./game_4.js" defer></script>
+</head>
+
+<body>
+    <h1 id="greet">Welcome to Roll to 21</h1>
+    <div id="status-message"></div>
+    <div class="dice-container">
+        <div class="dice-cube" id="dice">
+            <div class="dice-face face-1">
+                <div class="dice-dots" data-face="1">
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="dice-face face-2">
+                <div class="dice-dots" data-face="2">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="dice-face face-3">
+                <div class="dice-dots" data-face="3">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="dice-face face-4">
+                <div class="dice-dots" data-face="4">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="dice-face face-5">
+                <div class="dice-dots" data-face="5">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <div class="dice-face face-6">
+                <div class="dice-dots" data-face="6">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="game-controls">
+        <div class="action-buttons">
+            <button type="button" onclick="rollDice()" id="roll">Roll Dice</button>
+            <button type="button" onclick="stop_game(turn)" id="stop">Stop Turn</button>
+        </div>
+        <div class="game-info">
+            <p>Player <span id="turn">1</span> turn</p>
+            <p>Player 1 score: <span id="score_1">0</span></p>
+            <p>Player 2 score: <span id="score_2">0</span></p>
+        </div>
+    </div>
+    <div class="game-footer">
+        <button type="button" onclick="resetGame()" id="reset">New Game</button>
+    </div>
+</body>
+
+</html>
