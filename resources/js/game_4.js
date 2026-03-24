@@ -1,6 +1,6 @@
 const dice = document.getElementById("dice");
 const face = document.getElementById("face");
-const text = document.getElementById("turn");
+const turnDisplay = document.getElementById("turn-display");
 const statusMessage = document.getElementById("status-message");
 
 let score_1=0;
@@ -33,9 +33,9 @@ function rollDice() {
     updateDiceFace(result);
     
     if(turn === 1) {
-      score_1 = parseInt(score_1) + parseInt(result);
+      score_1 += result;
     } else {
-      score_2 = parseInt(score_2) + parseInt(result);
+      score_2 += result;
     }
 
     dice.style.transform = "rotateX(0deg) rotateY(0deg)";
@@ -43,7 +43,7 @@ function rollDice() {
     isRolling = false;
     change();
     displayScore();
-    checkGameEnd(turn);
+    checkGameEnd();
   }, 900);
 }
 
@@ -75,7 +75,7 @@ function resetGame() {
   roll_2 = true;
   document.getElementById("score_1").textContent = score_1;
   document.getElementById("score_2").textContent = score_2;
-  document.getElementById("turn").textContent = turn;
+  turnDisplay.textContent = turn === 1 ? "Player 1 turn" : "Player 2 turn";
   updateDiceFace(1);
   dice.style.transform = "rotateX(0deg) rotateY(0deg)";
   isRolling = false;
@@ -89,9 +89,8 @@ function resetGame() {
   document.getElementById("roll").style.display = "inline-block";
   document.getElementById("stop").style.display = "inline-block";
   
-  const turnElement = document.getElementById("turn");
-  turnElement.style.color = "";
-  turnElement.style.fontSize = "";
+  turnDisplay.style.color = "";
+  turnDisplay.style.fontSize = "";
 }
 
 function displayScore(){
@@ -102,45 +101,38 @@ function displayScore(){
 function change() {
   if (turn === 1 && !roll_1) {
     turn = 2;
-    text.textContent = turn;
+    turnDisplay.textContent = turn === 1 ? "Player 1 turn" : "Player 2 turn";
   } else if (turn === 2 && !roll_2) {
     turn = 1;
-    text.textContent = turn;
+    turnDisplay.textContent = turn === 1 ? "Player 1 turn" : "Player 2 turn";
   } else if (roll_1 && roll_2) {
     turn = turn === 1 ? 2 : 1;
-    text.textContent = turn;
+    turnDisplay.textContent = turn === 1 ? "Player 1 turn" : "Player 2 turn";
   }
   updateRollButton();
 }
 
-function checkGameEnd(turn) {
+function checkGameEnd() {
   let gameEnded = false;
   let winner = "";
   
-  if (turn==1){
-    if (score_1 ==21){
-      winner = "Player 1";
-      gameEnded = true;
-    }
-  } else {
-    if (score_2 ==21){
-      winner = "Player 2";
-      gameEnded = true;
-    }
-  }
-  if (score_1 >= 21 && score_2<21){
-    winner = "Player 1";
+  if (score_1 > 21 && score_2 <= 21) {
+    winner = "Player 2 wins! (Player 1 went over 21)";
+    gameEnded = true;
+  } else if (score_2 > 21 && score_1 <= 21) {
+    winner = "Player 1 wins! (Player 2 went over 21)";
     gameEnded = true;
   }
-  if (score_2 >= 21 && score_1<21){
-    winner = "Player 2";
+  else if (score_1 === 21 && score_2 !== 21) {
+    winner = "Player 1 wins! (Exactly 21)";
+    gameEnded = true;
+  } else if (score_2 === 21 && score_1 !== 21) {
+    winner = "Player 2 wins! (Exactly 21)";
     gameEnded = true;
   }
   
   if (gameEnded) {
-    disableRollButton();
-    hideGameButtons();
-    showWinnerInTurnDisplay(winner);
+    endGame(winner);
   }
 }
 
@@ -164,7 +156,7 @@ function stop_game(turn){
     disableRollButton();
   } else {
     change();
-    checkGameEnd(turn);
+    checkGameEnd();
     updateRollButton();
   }
 }
@@ -186,21 +178,33 @@ function disableRollButton() {
   rollButton.textContent = "Game Over";
 }
 
-function checkWinner() {
-  let winner;
-  if (score_1 > score_2) {
-    winner = "Player 1";
-  } else if (score_2 > score_1) {
-    winner = "Player 2";
-  } else {
-    winner = "It's a tie!";
-  }
-  
+function endGame(winner) {
+  disableRollButton();
   hideGameButtons();
   showWinnerInTurnDisplay(winner);
-  const rollButton = document.getElementById("roll");
-  rollButton.disabled = true;
-  rollButton.textContent = "Game Over";
+}
+
+function checkWinner() {
+  let winner;
+  if (score_1 > 21 && score_2 <= 21) {
+    winner = "Player 2 wins! (Player 1 went over 21)";
+  } else if (score_2 > 21 && score_1 <= 21) {
+    winner = "Player 1 wins! (Player 2 went over 21)";
+  } else if (score_1 === 21 && score_2 !== 21) {
+    winner = "Player 1 wins! (Exactly 21)";
+  } else if (score_2 === 21 && score_1 !== 21) {
+    winner = "Player 2 wins! (Exactly 21)";
+  } else {
+    if (score_1 > score_2) {
+      winner = "Player 1 wins!";
+    } else if (score_2 > score_1) {
+      winner = "Player 2 wins!";
+    } else {
+      winner = "It's a tie!";
+    }
+  }
+  
+  endGame(winner);
 }
 
 function hideGameButtons() {
@@ -209,12 +213,8 @@ function hideGameButtons() {
 }
 
 function showWinnerInTurnDisplay(winner) {
-  const turnElement = document.getElementById("turn");
-  if (winner === "It's a tie!") {
-    turnElement.innerHTML = `<strong>It's a tie!</strong>`;
-  } else {
-    turnElement.innerHTML = `<strong>${winner} Wins!</strong>`;
-  }
-  turnElement.style.color = "#ffeb3b";
-  turnElement.style.fontSize = "1.3em";
+  const turnDisplay = document.getElementById("turn-display");
+  turnDisplay.innerHTML = `<strong>${winner}</strong>`;
+  turnDisplay.style.color = "#ffeb3b";
+  turnDisplay.style.fontSize = "1.3em";
 }
