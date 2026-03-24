@@ -1,0 +1,119 @@
+body {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+p {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+div#parent {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#project, #game {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#project h2, #game h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+li a {
+    display: block;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(127, 201, 223, 0.3);
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+/* Individual project colors - different light combos with similar text colors */
+#project li:nth-child(1) a { background: linear-gradient(135deg, #DCEFFD 0%, #FFFEF7 100%); color: #555; }
+#project li:nth-child(2) a { background: linear-gradient(135deg, #FFFEF7 0%, #F9E4EC 100%); color: #555; }
+#project li:nth-child(3) a { background: linear-gradient(135deg, #F9E4EC 0%, #DCEFFD 100%); color: #555; }
+#project li:nth-child(4) a { background: linear-gradient(135deg, #E8F4FD 0%, #FFF9F0 100%); color: #555; }
+#project li:nth-child(5) a { background: linear-gradient(135deg, #FFF9F0 0%, #F0F8FF 100%); color: #555; }
+#project li:nth-child(6) a { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #555; } /* Underlined */
+#project li:nth-child(7) a { background: linear-gradient(135deg, #F0F8FF 0%, #FFF5F5 100%); color: #555; }
+#project li:nth-child(8) a { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); color: #555; } /* Underlined */
+#project li:nth-child(9) a { background: linear-gradient(135deg, #FFF5F5 0%, #F5F5FF 100%); color: #555; }
+#project li:nth-child(10) a { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); color: #fff; } /* Underlined */
+#project li:nth-child(11) a { background: linear-gradient(135deg, #F5F5FF 0%, #F0FFF0 100%); color: #555; }
+#project li:nth-child(12) a { background: linear-gradient(135deg, #F0FFF0 0%, #FFF0F5 100%); color: #555; }
+#project li:nth-child(13) a { background: linear-gradient(135deg, #FFF0F5 0%, #F5F0FF 100%); color: #555; }
+#project li:nth-child(14) a { background: linear-gradient(135deg, #fddb92 0%, #d1fdff 100%); color: #555; } /* Underlined */
+#project li:nth-child(15) a { background: linear-gradient(135deg, #F5F0FF 0%, #E6F3FF 100%); color: #555; }
+#project li:nth-child(16) a { background: linear-gradient(135deg, #E6F3FF 0%, #F0F8FF 100%); color: #555; }
+#project li:nth-child(17) a { background: linear-gradient(135deg, #F8F9FF 0%, #FFF5EE 100%); color: #555; }
+#project li:nth-child(18) a { background: linear-gradient(135deg, #FFF5EE 0%, #F0FFF0 100%); color: #555; }
+#project li:nth-child(19) a { background: linear-gradient(135deg, #F5FFFA 0%, #F0FFFF 100%); color: #555; }
+#project li:nth-child(20) a { background: linear-gradient(135deg, #F0FFFF 0%, #FFF8DC 100%); color: #555; }
+
+/* Games - better gradient colors */
+#game li a { 
+    background: linear-gradient(135deg, #e8f4fd 0%, #fff9f0 100%); 
+    color: #555; 
+}
+
+li a:hover {
+    background: rgba(127, 201, 223, 0.2);
+    border-color: #7fc9df;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(127, 201, 223, 0.2);
+    color: #357abd;
+}
+
+li a:active {
+    transform: translateY(0);
+}
+
+li u {
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    div#parent {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    #project, #game {
+        padding: 20px;
+    }
+}

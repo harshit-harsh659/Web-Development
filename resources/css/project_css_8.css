@@ -1,0 +1,10 @@
+/* Write your code here: */
+h1, h2 {
+    color:blueviolet;
+}
+div > p {
+    color:firebrick;
+}
+.done list{
+    color:blue
+}

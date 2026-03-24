@@ -12,7 +12,6 @@ let roll_2 = true;
 let isRolling = false;
 let turn=1;
 
-// Initialize dice with default dots
 document.addEventListener('DOMContentLoaded', function() {
     updateDiceFace(1);
 });
@@ -20,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function rollDice() {
   if (isRolling) return;
   
-  // Check if current player can still roll
   if (turn === 1 && !roll_1) return;
   if (turn === 2 && !roll_2) return;
   
@@ -84,16 +82,13 @@ function resetGame() {
   statusMessage.textContent = "";
   statusMessage.classList.remove("stop-turn");
   
-  // Reset roll button
   const rollButton = document.getElementById("roll");
   rollButton.disabled = false;
   rollButton.textContent = "Roll Dice";
   
-  // Show game buttons again
   document.getElementById("roll").style.display = "inline-block";
   document.getElementById("stop").style.display = "inline-block";
   
-  // Reset turn display styling
   const turnElement = document.getElementById("turn");
   turnElement.style.color = "";
   turnElement.style.fontSize = "";
@@ -164,7 +159,6 @@ function stop_game(turn){
     }
   }
   
-  // Check if both players have stopped rolling
   if (!roll_1 && !roll_2) {
     checkWinner();
     disableRollButton();

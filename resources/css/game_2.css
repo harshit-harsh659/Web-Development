@@ -1,0 +1,113 @@
+body {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+div.greeting {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+div.game-area {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    height: 450px;
+    margin: 0 auto;
+    width: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+div.row1, div.row2, div.row3 {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+}
+
+div.row1 {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+div.row2 {
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+div.row3 {
+    border-top: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.response.button {
+    display: flex;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.response.button:not(:last-child) {
+    border-right: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.98);
+}
+
+.button:active {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0.95);
+}
+
+button {
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+    border: none;
+    background: transparent;
+}
+
+button img {
+    object-fit: contain;
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+#Bottom {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#Bottom h3 {
+    margin: 0;
+}
+
+#curr-turn {
+    color: #ffeb3b;
+}
+
+#XorO {
+    color: #4caf50;
+    font-weight: bold;
+}
